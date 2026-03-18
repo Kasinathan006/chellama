@@ -1,8 +1,8 @@
 node_modules/
 client/node_modules/
-client/build/
 .env
 *.log
 uploads/
 .DS_Store
 .vercel
+mongo_uri.txt
