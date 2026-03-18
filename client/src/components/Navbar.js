@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaGamepad } from 'react-icons/fa';
+// no op
 
 const Navbar = () => {
   return (
