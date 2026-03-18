@@ -72,7 +72,7 @@ const Register = () => {
       <div className="reg-wrapper">
         <div className="reg-title-block">
           <h1>JOIN TOURNAMENT</h1>
-          <p>SOLO MATCH · ENTRY ₹10 · PRIZE ₹180</p>
+          <p>SOLO MATCH · PRIZE ₹180</p>
         </div>
 
         <div className="reg-grid">
