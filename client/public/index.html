@@ -1,18 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#7c3aed" />
-    <meta name="description" content="Premium Gaming Platform - Play the best online games" />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-    <title>Chellama Battle Royal</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-  </body>
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#7c3aed" />
+  <meta name="description" content="Chellama Battle Royal - Gaming Tournament" />
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <title>Chellama Battle Royal</title>
+  <style>
+    /* Prevent white flash — dark background from the start */
+    html,
+    body,
+    #root {
+      background: #07001a !important;
+      min-height: 100vh;
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+  <script>
+    // Catch ANY JS errors and show them visually
+    window.onerror = function (msg, url, line, col, error) {
+      var el = document.getElementById('root');
+      el.innerHTML = '<div style="background:#07001a;color:#d580ff;min-height:100vh;display:flex;align-items:center;justify-content:center;font-family:sans-serif;text-align:center;padding:2rem"><div><h1 style="margin-bottom:1rem">CHELLAMA GAMING</h1><p style="color:#fff;margin-bottom:1rem">Error: ' + msg + '</p><p style="color:#888;font-size:0.8rem">' + url + ':' + line + '</p><button onclick="location.reload()" style="margin-top:1rem;padding:12px 24px;background:#b829ff;border:none;border-radius:8px;color:#fff;cursor:pointer;font-size:1rem">REFRESH</button></div></div>';
+      return true;
+    };
+  </script>
+</body>
+
 </html>
