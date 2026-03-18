@@ -42,7 +42,7 @@ const AdminPanel = () => {
 
     const fetchSlots = async () => {
         try {
-            const res = await fetch('${API_BASE}/api/registrations');
+            const res = await fetch(`${API_BASE}/api/registrations`);
             if (res.ok) {
                 const data = await res.json();
                 const formatted = data.map((reg, i) => ({
@@ -133,7 +133,7 @@ const AdminPanel = () => {
     const handleClearAll = async () => {
         if (window.confirm('⚠️ CLEAR ALL REGISTRATIONS?\n\nThis cannot be undone!')) {
             try {
-                const res = await fetch('${API_BASE}/api/registrations/actions/clear', {
+                const res = await fetch(`${API_BASE}/api/registrations/actions/clear`, {
                     method: 'DELETE'
                 });
                 if (res.ok) {
