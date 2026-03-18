@@ -193,17 +193,68 @@ html {
   color: transparent;
 }
 
+
 @media (max-width: 768px) {
-  .custom-grid {
-    grid-template-columns: 1fr;
-    column-gap: 0;
+  .custom-purple-page {
+    padding: 0.5rem;
   }
 
   .custom-board {
-    padding: 40px 25px;
+    padding: 25px 15px;
+    margin: 0.5rem;
+    border-radius: 16px;
   }
 
   .custom-title {
-    font-size: 26px;
+    font-size: 22px;
+    letter-spacing: 3px;
+  }
+
+  .custom-subtitle {
+    font-size: 11px;
+    letter-spacing: 3px;
+  }
+
+  /* Show 2 columns of slots on mobile */
+  .custom-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    column-gap: 8px;
+  }
+
+  .custom-pill {
+    padding: 10px 8px;
+    border-radius: 12px;
+  }
+
+  .custom-square {
+    width: 30px;
+    height: 30px;
+    font-size: 9px;
+    border-radius: 6px;
+    flex-shrink: 0;
+  }
+
+  .player-name {
+    font-size: 12px;
+    letter-spacing: 0.5px;
+  }
+
+  .custom-tag {
+    font-size: 8px;
+    padding: 3px 7px;
+    letter-spacing: 0.5px;
+  }
+}
+
+@media (max-width: 400px) {
+  .custom-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
+  }
+
+  .custom-title {
+    font-size: 18px;
+    letter-spacing: 2px;
   }
 }
