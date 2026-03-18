@@ -55,7 +55,9 @@ const AdminPanel = () => {
                     mode: reg.mode || 'Solo Match',
                     timestamp: reg.createdAt || new Date().toISOString(),
                     isVerified: reg.status === 'VERIFIED',
-                    screenshot: reg.screenshotUrl ? `${API_BASE}${reg.screenshotUrl}` : '/assets/qr.jpg'
+                    screenshot: reg.screenshotUrl
+                        ? (reg.screenshotUrl.startsWith('data:') ? reg.screenshotUrl : `${API_BASE}${reg.screenshotUrl}`)
+                        : '/assets/qr.jpg'
                 }));
                 setSlots(formatted);
                 calcStats(formatted);

@@ -2,23 +2,9 @@ const express = require('express');
 const router = express.Router();
 const Registration = require('../models/Registration');
 const multer = require('multer');
-const path = require('path');
-const fs = require('fs');
 
-const storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-        const uploadPath = path.join(__dirname, '../uploads');
-        if (!fs.existsSync(uploadPath)) {
-            fs.mkdirSync(uploadPath);
-        }
-        cb(null, uploadPath);
-    },
-    filename: function (req, file, cb) {
-        cb(null, Date.now() + path.extname(file.originalname));
-    }
-});
-
-const upload = multer({ storage: storage });
+// Use memory storage — works on Vercel serverless
+const upload = multer({ storage: multer.memoryStorage(), limits: { fileSize: 5 * 1024 * 1024 } });
 
 // GET all registrations
 router.get('/', async (req, res) => {
@@ -35,7 +21,10 @@ router.post('/', upload.single('screenshot'), async (req, res) => {
     try {
         const formData = { ...req.body };
         if (req.file) {
-            formData.screenshotUrl = '/uploads/' + req.file.filename;
+            // Convert to base64 data URL — works on Vercel (no filesystem needed)
+            const base64 = req.file.buffer.toString('base64');
+            const mimeType = req.file.mimetype || 'image/jpeg';
+            formData.screenshotUrl = `data:${mimeType};base64,${base64}`;
         }
         const newReg = new Registration(formData);
         await newReg.save();
