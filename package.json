@@ -1,0 +1,40 @@
+{
+  "name": "gaming-website",
+  "version": "1.0.0",
+  "description": "Full gaming website with purple theme",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "serve": "node scripts/serve-production.js",
+    "server": "nodemon server.js",
+    "server:plain": "node server.js",
+    "client": "cd client && npm start",
+    "dev": "node scripts/dev-runner.js",
+    "install-client": "cd client && npm install",
+    "build": "cd client && npm run build"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^7.5.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "bcryptjs": "^2.4.3",
+    "jsonwebtoken": "^9.0.2",
+    "express-validator": "^7.0.1",
+    "multer": "^1.4.5-lts.1",
+    "uuid": "^9.0.0",
+    "socket.io": "^4.7.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1",
+    "concurrently": "^8.2.0"
+  },
+  "keywords": [
+    "gaming",
+    "react",
+    "nodejs",
+    "purple-theme"
+  ],
+  "author": "Your Name",
+  "license": "MIT"
+}

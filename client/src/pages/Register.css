@@ -1,0 +1,345 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@500;600;700&family=Teko:wght@400;500;600&display=swap');
+
+/* ==================== PAGE BASE ==================== */
+.reg-page {
+    min-height: 100vh;
+    background-color: #07001a;
+    background-image:
+        radial-gradient(ellipse at 20% 30%, rgba(150, 30, 255, 0.4) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 70%, rgba(100, 0, 180, 0.3) 0%, transparent 50%),
+        linear-gradient(rgba(7, 0, 26, 0.75), rgba(7, 0, 26, 0.85)),
+        url('../assets/register-bg.jpeg');
+    background-size: cover, cover, cover, cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-blend-mode: screen, screen, normal, normal;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Rajdhani', sans-serif;
+}
+
+/* Stars */
+.reg-stars::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image:
+        radial-gradient(1px 1px at 12% 25%, rgba(255, 255, 255, 0.8) 100%, transparent),
+        radial-gradient(1px 1px at 35% 60%, rgba(200, 100, 255, 0.6) 100%, transparent),
+        radial-gradient(1px 1px at 65% 15%, rgba(255, 255, 255, 0.8) 100%, transparent),
+        radial-gradient(1px 1px at 85% 75%, rgba(200, 100, 255, 0.5) 100%, transparent),
+        radial-gradient(1px 1px at 50% 45%, rgba(255, 255, 255, 0.6) 100%, transparent),
+        radial-gradient(1.5px 1.5px at 25% 85%, rgba(220, 150, 255, 0.4) 100%, transparent);
+    background-size: 500px 500px;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* ==================== WRAPPER ==================== */
+.reg-wrapper {
+    width: 100%;
+    max-width: 900px;
+    position: relative;
+    z-index: 2;
+}
+
+/* ==================== TITLE ==================== */
+.reg-title-block {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.reg-title-block h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 900;
+    font-size: 2.2rem;
+    color: #fff;
+    text-shadow: 0 0 20px #b829ff, 0 0 5px #b829ff;
+    letter-spacing: 4px;
+    margin: 0;
+}
+
+.reg-title-block p {
+    color: #9d6bc4;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 0.95rem;
+    letter-spacing: 3px;
+    margin-top: 6px;
+    text-transform: uppercase;
+}
+
+/* ==================== GRID ==================== */
+.reg-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+/* ==================== CARD BASE ==================== */
+.reg-form-card,
+.reg-qr-card {
+    background: rgba(20, 0, 50, 0.75);
+    border: 1px solid rgba(184, 41, 255, 0.35);
+    border-radius: 16px;
+    padding: 1.8rem;
+    box-shadow: 0 0 30px rgba(100, 0, 200, 0.15), inset 0 0 30px rgba(100, 0, 200, 0.05);
+    backdrop-filter: blur(8px);
+    position: relative;
+    overflow: hidden;
+}
+
+/* top glow line */
+.reg-form-card::before,
+.reg-qr-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 10%;
+    right: 10%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #b829ff, transparent);
+}
+
+/* ==================== CARD LABEL ==================== */
+.reg-card-label {
+    font-family: 'Orbitron', sans-serif;
+    color: #b829ff;
+    font-size: 0.75rem;
+    letter-spacing: 4px;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    border-bottom: 1px solid rgba(184, 41, 255, 0.2);
+    padding-bottom: 0.8rem;
+}
+
+/* ==================== FORM ==================== */
+.reg-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.reg-field {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.reg-field label {
+    font-family: 'Orbitron', sans-serif;
+    color: #9b59b6;
+    font-size: 0.65rem;
+    letter-spacing: 3px;
+}
+
+.reg-input {
+    background: rgba(10, 0, 30, 0.8);
+    border: 1px solid rgba(184, 41, 255, 0.25);
+    border-radius: 8px;
+    color: #fff;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 10px 14px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.reg-input::placeholder {
+    color: rgba(155, 89, 182, 0.5);
+}
+
+.reg-input:focus {
+    border-color: rgba(184, 41, 255, 0.7);
+    box-shadow: 0 0 10px rgba(184, 41, 255, 0.2);
+    background: rgba(30, 0, 60, 0.8);
+}
+
+/* ==================== SUBMIT BUTTON ==================== */
+.reg-submit-btn {
+    margin-top: 0.5rem;
+    background: linear-gradient(135deg, #9b30f0, #5b0fa8);
+    border: 1px solid #c855ff;
+    border-radius: 8px;
+    color: #fff;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 3px;
+    padding: 14px;
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(184, 41, 255, 0.3), inset 0 0 15px rgba(184, 41, 255, 0.1);
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.reg-submit-btn:hover:not(:disabled) {
+    background: linear-gradient(135deg, #b855ff, #7c20cc);
+    box-shadow: 0 0 30px rgba(184, 41, 255, 0.6);
+    transform: translateY(-1px);
+}
+
+.reg-submit-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* ==================== ALERTS ==================== */
+.reg-alert {
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+}
+
+.alert-success {
+    background: rgba(0, 200, 100, 0.1);
+    border: 1px solid rgba(0, 200, 100, 0.4);
+    color: #6ee7b7;
+}
+
+.alert-error {
+    background: rgba(200, 0, 50, 0.1);
+    border: 1px solid rgba(200, 0, 50, 0.4);
+    color: #fca5a5;
+}
+
+/* ==================== QR SIDE ==================== */
+.reg-qr-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.qr-amount-badge {
+    font-family: 'Teko', sans-serif;
+    font-size: 3.5rem;
+    color: #d580ff;
+    text-shadow: 0 0 15px rgba(184, 41, 255, 0.6);
+    line-height: 1;
+    margin-bottom: 4px;
+}
+
+.qr-instruction {
+    font-family: 'Rajdhani', sans-serif;
+    color: #9b59b6;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 1.2rem;
+}
+
+.qr-box {
+    width: 170px;
+    height: 170px;
+    border: 2px solid rgba(184, 41, 255, 0.5);
+    border-radius: 12px;
+    background: rgba(10, 0, 30, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(184, 41, 255, 0.2);
+    margin-bottom: 1.5rem;
+}
+
+.qr-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 8px;
+}
+
+.qr-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: #6b21a8;
+    padding: 1rem;
+}
+
+.qr-placeholder span {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 3px;
+}
+
+.qr-placeholder small {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 0.7rem;
+    color: #4c1d95;
+}
+
+/* ==================== SCREENSHOT UPLOAD ==================== */
+.ss-upload-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.2rem;
+}
+
+.ss-label {
+    font-family: 'Rajdhani', sans-serif;
+    color: #9b59b6;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
+
+.ss-upload-btn {
+    display: block;
+    background: rgba(10, 0, 30, 0.8);
+    border: 1px dashed rgba(184, 41, 255, 0.4);
+    border-radius: 8px;
+    color: #b857ff;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    text-align: center;
+}
+
+.ss-upload-btn:hover {
+    background: rgba(184, 41, 255, 0.1);
+    border-color: rgba(184, 41, 255, 0.7);
+}
+
+/* ==================== PAYMENT NOTE ==================== */
+.payment-note {
+    background: rgba(100, 20, 0, 0.15);
+    border: 1px solid rgba(255, 100, 0, 0.2);
+    border-radius: 8px;
+    padding: 10px 14px;
+    width: 100%;
+}
+
+.payment-note p {
+    font-family: 'Rajdhani', sans-serif;
+    color: #fbbf24;
+    font-size: 0.8rem;
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 700px) {
+    .reg-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .reg-title-block h1 {
+        font-size: 1.6rem;
+    }
+}

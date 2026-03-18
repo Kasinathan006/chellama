@@ -1,0 +1,148 @@
+.history-page {
+  padding: 40px 0;
+}
+
+.history-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+
+.history-header h1 {
+  font-size: 32px;
+  font-weight: 800;
+}
+
+.filter-tabs {
+  display: flex;
+  gap: 8px;
+}
+
+.filter-tabs button {
+  padding: 10px 20px;
+  background: var(--bg-card);
+  border: 1px solid rgba(124, 58, 237, 0.3);
+  border-radius: var(--radius-full);
+  color: var(--text-secondary);
+  font-size: 14px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.filter-tabs button:hover {
+  border-color: var(--primary-500);
+  color: var(--text-primary);
+}
+
+.filter-tabs button.active {
+  background: var(--primary-600);
+  border-color: var(--primary-600);
+  color: white;
+}
+
+.history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.history-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px;
+  background: var(--bg-card);
+  border: 1px solid rgba(124, 58, 237, 0.2);
+  border-radius: var(--radius-lg);
+  transition: all var(--transition-fast);
+}
+
+.history-item:hover {
+  border-color: rgba(124, 58, 237, 0.4);
+}
+
+.history-icon-wrapper {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  background: var(--bg-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.history-icon {
+  font-size: 20px;
+}
+
+.history-icon.deposit,
+.history-icon.win {
+  color: var(--accent-green);
+}
+
+.history-icon.withdrawal,
+.history-icon.bet {
+  color: var(--accent-red);
+}
+
+.history-info {
+  flex: 1;
+}
+
+.history-type {
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+.history-game {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+}
+
+.history-date {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.history-amount {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.history-amount.deposit,
+.history-amount.win {
+  color: var(--accent-green);
+}
+
+.history-amount.withdrawal,
+.history-amount.bet {
+  color: var(--accent-red);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .history-header {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .filter-tabs {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .history-item {
+    flex-wrap: wrap;
+  }
+
+  .history-amount {
+    width: 100%;
+    text-align: right;
+  }
+}

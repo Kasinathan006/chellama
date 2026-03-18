@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@500;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+
+/* ═══════════════════════════════════════
+   PAGE SHELL
+═══════════════════════════════════════ */
+.custom-purple-page {
+  min-height: 100vh;
+  /* Deep starry dark purple exactly like Home page */
+  background: #07001a;
+  background-image:
+    radial-gradient(ellipse at 20% 20%, rgba(150, 30, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 80%, rgba(80, 0, 180, 0.07) 0%, transparent 50%);
+  padding: 60px 20px;
+  font-family: 'Rajdhani', sans-serif;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Simulated stars from Home page */
+.custom-purple-page::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(1.5px 1.5px at 10% 15%, rgba(184, 41, 255, 0.5) 0%, transparent 100%),
+    radial-gradient(1px 1px at 30% 40%, rgba(255, 255, 255, 0.35) 0%, transparent 100%),
+    radial-gradient(1px 1px at 85% 10%, rgba(184, 41, 255, 0.5) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 50% 80%, rgba(255, 255, 255, 0.3) 0%, transparent 100%),
+    radial-gradient(1px 1px at 15% 70%, rgba(184, 41, 255, 0.4) 0%, transparent 100%);
+}
+
+.custom-title {
+  text-align: center;
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 900;
+  letter-spacing: 5px;
+  color: #fff;
+  text-shadow: 0 0 20px rgba(184, 41, 255, 0.8);
+  margin-bottom: 40px;
+  position: relative;
+  z-index: 2;
+  text-transform: uppercase;
+}
+
+.custom-board {
+  position: relative;
+  z-index: 2;
+  background: rgba(18, 4, 40, 0.85);
+  /* Deep neon purple semi-transparent */
+  border: 1px solid rgba(184, 41, 255, 0.4);
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 50px 60px;
+  border-radius: 20px;
+  box-shadow: 0 0 40px rgba(184, 41, 255, 0.15), inset 0 0 30px rgba(184, 41, 255, 0.05);
+  backdrop-filter: blur(10px);
+}
+
+.custom-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 60px;
+  row-gap: 30px;
+}
+
+.custom-slot {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  position: relative;
+  transition: transform 0.3s;
+}
+
+.custom-slot:hover {
+  transform: translateY(-2px);
+}
+
+/* Left Square Checkbox */
+.custom-square {
+  width: 38px;
+  height: 38px;
+  border: 2px solid #b829ff;
+  /* Neon purple border */
+  border-radius: 6px;
+  background: rgba(184, 41, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 14px;
+  color: #e8d5ff;
+  /* Lighter purple text */
+  font-weight: 700;
+  flex-shrink: 0;
+  box-shadow: 0 0 10px rgba(184, 41, 255, 0.3);
+  text-shadow: 0 0 5px rgba(184, 41, 255, 0.8);
+}
+
+/* Main Pill Shape */
+.custom-pill {
+  flex: 1;
+  height: 50px;
+  background: linear-gradient(135deg, rgba(138, 43, 226, 0.9), rgba(106, 13, 173, 0.9));
+  /* Deep Purple gradient */
+  border: 2px solid #230145;
+  border-radius: 30px;
+  box-shadow: 4px 5px 0px rgba(0, 0, 0, 0.6);
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0 18px;
+  transition: box-shadow 0.3s;
+}
+
+.custom-pill.empty-pill {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1.5px dashed rgba(184, 41, 255, 0.3);
+  box-shadow: none;
+}
+
+.custom-pill.empty-pill .player-name {
+  color: rgba(184, 41, 255, 0.2);
+  text-shadow: none;
+}
+
+.player-name {
+  color: #ffffff;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 900;
+  font-size: 16px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 85%;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+/* Small overlapping tag top right (Round Box) */
+.custom-tag {
+  position: absolute;
+  top: -12px;
+  right: 15px;
+  height: 24px;
+  min-width: 70px;
+  padding: 0 12px;
+  border: 2px solid #1a0033;
+  border-radius: 12px;
+  /* Round box */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  z-index: 2;
+  box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.6);
+}
+
+.tag-verified {
+  background-color: #22c55e;
+  /* Green */
+  color: #000000;
+}
+
+.tag-pending {
+  background-color: #f97316;
+  /* Orange instead of yellow */
+  color: #ffffff;
+}
+
+.tag-empty {
+  background-color: transparent;
+  /* Invisible for empty */
+  border-color: transparent;
+  box-shadow: none;
+  color: transparent;
+}
+
+@media (max-width: 768px) {
+  .custom-grid {
+    grid-template-columns: 1fr;
+    column-gap: 0;
+  }
+
+  .custom-board {
+    padding: 40px 25px;
+  }
+
+  .custom-title {
+    font-size: 26px;
+  }
+}

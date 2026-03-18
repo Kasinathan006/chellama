@@ -1,0 +1,380 @@
+.game-detail-page {
+  min-height: calc(100vh - 72px);
+}
+
+/* Hero Section */
+.game-hero {
+  position: relative;
+  padding: 100px 0 60px;
+  overflow: hidden;
+}
+
+.game-hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  background-position: center;
+  filter: blur(20px) brightness(0.3);
+}
+
+.game-hero .container {
+  position: relative;
+  z-index: 1;
+}
+
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: rgba(124, 58, 237, 0.2);
+  border: 1px solid rgba(124, 58, 237, 0.3);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  font-size: 14px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  margin-bottom: 32px;
+}
+
+.back-btn:hover {
+  background: rgba(124, 58, 237, 0.3);
+}
+
+.game-hero-content {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 60px;
+  align-items: center;
+}
+
+.game-hero-info {
+  max-width: 600px;
+}
+
+.game-badges {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.game-hero-info h1 {
+  font-size: 48px;
+  font-weight: 800;
+  margin-bottom: 12px;
+  line-height: 1.1;
+}
+
+.game-provider {
+  font-size: 18px;
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+}
+
+.game-mode-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  margin-bottom: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(15, 10, 26, 0.75);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+.game-description {
+  color: var(--text-secondary);
+  font-size: 16px;
+  margin-bottom: 24px;
+}
+
+.game-rating {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.stars {
+  display: flex;
+  gap: 4px;
+}
+
+.stars svg {
+  font-size: 20px;
+  color: var(--text-secondary);
+}
+
+.stars svg.filled {
+  color: var(--accent-gold);
+}
+
+.game-rating span {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.game-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.game-hero-image {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-glow-lg);
+}
+
+.game-hero-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Game Info Grid */
+.game-info-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 40px;
+  padding: 60px 0;
+}
+
+.info-section {
+  margin-bottom: 40px;
+}
+
+.info-section h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(124, 58, 237, 0.2);
+}
+
+.info-section p {
+  font-size: 16px;
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.detail-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 20px;
+  background: var(--bg-card);
+  border: 1px solid rgba(124, 58, 237, 0.2);
+  border-radius: var(--radius-md);
+}
+
+.detail-label {
+  font-size: 13px;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.detail-value {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.tags-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tag {
+  padding: 8px 16px;
+  background: var(--bg-secondary);
+  border: 1px solid rgba(124, 58, 237, 0.3);
+  border-radius: var(--radius-full);
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+/* Sidebar */
+.game-info-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.sidebar-card {
+  background: var(--bg-card);
+  border: 1px solid rgba(124, 58, 237, 0.2);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+}
+
+.sidebar-card h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(124, 58, 237, 0.2);
+}
+
+.quick-stat {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(124, 58, 237, 0.1);
+}
+
+.quick-stat:last-child {
+  border-bottom: none;
+}
+
+.quick-stat svg {
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+  background: var(--bg-secondary);
+  border-radius: var(--radius-md);
+  color: var(--primary-500);
+}
+
+.quick-stat .stat-label {
+  display: block;
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+}
+
+.quick-stat .stat-value {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.how-to-play {
+  list-style: none;
+}
+
+.how-to-play li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.how-to-play li::before {
+  content: '✓';
+  width: 24px;
+  height: 24px;
+  background: var(--primary-600);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: white;
+}
+
+/* Game Modal */
+.game-modal {
+  max-width: 500px;
+}
+
+.bet-amount-section {
+  margin-bottom: 24px;
+}
+
+.bet-amount-section label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.bet-amount-controls {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.bet-amount-controls .input {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.bet-amount-controls .btn {
+  width: 50px;
+  padding: 0;
+  font-size: 20px;
+}
+
+.bet-limits {
+  font-size: 13px;
+  color: var(--text-secondary);
+  text-align: center;
+}
+
+.balance-info {
+  padding: 16px;
+  background: var(--bg-secondary);
+  border-radius: var(--radius-md);
+  text-align: center;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .game-hero-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .game-hero-image {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .game-actions {
+    justify-content: center;
+  }
+
+  .game-info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .details-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .game-hero-info h1 {
+    font-size: 36px;
+  }
+
+  .details-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .game-actions {
+    flex-direction: column;
+  }
+
+  .game-actions .btn {
+    width: 100%;
+  }
+}

@@ -1,0 +1,102 @@
+.admin-transactions {
+  padding: 0;
+}
+
+.tx-id {
+  font-family: monospace;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.tx-type-cell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tx-icon {
+  font-size: 16px;
+}
+
+.tx-icon.deposit {
+  color: var(--accent-green);
+}
+
+.tx-icon.withdrawal {
+  color: var(--accent-red);
+}
+
+.tx-amount {
+  font-weight: 700;
+}
+
+.tx-amount.deposit,
+.tx-amount.win,
+.tx-amount.bonus {
+  color: var(--accent-green);
+}
+
+.tx-amount.withdrawal,
+.tx-amount.bet {
+  color: var(--accent-red);
+}
+
+.tx-status {
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.tx-status.pending {
+  background: rgba(245, 158, 11, 0.2);
+  color: var(--accent-gold);
+}
+
+.tx-status.completed {
+  background: rgba(16, 185, 129, 0.2);
+  color: var(--accent-green);
+}
+
+.tx-status.failed {
+  background: rgba(239, 68, 68, 0.2);
+  color: var(--accent-red);
+}
+
+.tx-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.tx-actions .action-btn {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.tx-actions .action-btn.approve {
+  background: rgba(16, 185, 129, 0.2);
+  color: var(--accent-green);
+}
+
+.tx-actions .action-btn.approve:hover {
+  background: var(--accent-green);
+  color: white;
+}
+
+.tx-actions .action-btn.reject {
+  background: rgba(239, 68, 68, 0.2);
+  color: var(--accent-red);
+}
+
+.tx-actions .action-btn.reject:hover {
+  background: var(--accent-red);
+  color: white;
+}
