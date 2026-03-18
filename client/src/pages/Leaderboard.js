@@ -37,7 +37,7 @@ const ConfirmList = () => {
       <h1 className="custom-title">Player confirm list</h1>
 
       {loading ? (
-        <div style={{ textAlign: 'center', marginTop: '50px', color: '#000' }}>Loading...</div>
+        <div style={{ textAlign: 'center', marginTop: '50px', color: '#d580ff', fontFamily: 'Orbitron', fontSize: '1rem', letterSpacing: '3px' }}>LOADING...</div>
       ) : (
         <div className="custom-board">
           <div className="custom-grid">

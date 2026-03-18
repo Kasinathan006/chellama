@@ -2,11 +2,13 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background: #07001a;
 }
 
 .main-content {
   flex: 1;
   padding-top: 72px;
+  background: #07001a;
 }
 
 .main-content-no-offset {
@@ -454,5 +456,27 @@
   .footer-bottom {
     flex-direction: column;
     text-align: center;
+  }
+}
+
+/* ── NAVBAR MOBILE ── */
+@media (max-width: 480px) {
+  .navbar-container {
+    padding: 0 12px;
+    height: 60px;
+  }
+
+  .navbar-links {
+    gap: 0.6rem;
+  }
+
+  .navbar-link {
+    font-size: 0.62rem;
+    letter-spacing: 0.5px;
+    padding: 4px 6px;
+  }
+
+  .main-content {
+    padding-top: 60px;
   }
 }
