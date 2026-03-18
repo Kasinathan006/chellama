@@ -21,7 +21,6 @@ router.post('/', upload.single('screenshot'), async (req, res) => {
     try {
         const formData = { ...req.body };
         if (req.file) {
-            // Convert to base64 data URL — works on Vercel (no filesystem needed)
             const base64 = req.file.buffer.toString('base64');
             const mimeType = req.file.mimetype || 'image/jpeg';
             formData.screenshotUrl = `data:${mimeType};base64,${base64}`;
@@ -31,6 +30,34 @@ router.post('/', upload.single('screenshot'), async (req, res) => {
         res.status(201).json(newReg);
     } catch (error) {
         res.status(500).json({ message: 'Error saving registration', error: error.message });
+    }
+});
+
+// ⚠️ MUST be BEFORE /:id routes — otherwise Express matches "actions" as an ID
+// CLEAR ALL registrations
+router.delete('/actions/clear', async (req, res) => {
+    try {
+        await Registration.deleteMany({});
+        res.json({ message: 'All registrations cleared successfully' });
+    } catch (error) {
+        res.status(500).json({ message: 'Error clearing registrations', error: error.message });
+    }
+});
+
+// GET stats summary  (also before /:id)
+router.get('/stats', async (req, res) => {
+    try {
+        const total = await Registration.countDocuments();
+        const verified = await Registration.countDocuments({ status: 'VERIFIED' });
+        res.json({
+            registered: total,
+            verified,
+            pending: total - verified,
+            slotsLeft: Math.max(0, 32 - total),
+            players: total
+        });
+    } catch (error) {
+        res.status(500).json({ message: 'Error fetching stats' });
     }
 });
 
@@ -48,17 +75,8 @@ router.patch('/:id', async (req, res) => {
         res.status(500).json({ message: 'Error updating registration', error: error.message });
     }
 });
-// CLEAR ALL registrations
-router.delete('/actions/clear', async (req, res) => {
-    try {
-        await Registration.deleteMany({});
-        res.json({ message: 'All registrations cleared successfully' });
-    } catch (error) {
-        res.status(500).json({ message: 'Error clearing registrations', error: error.message });
-    }
-});
 
-// DELETE a registration
+// DELETE a single registration
 router.delete('/:id', async (req, res) => {
     try {
         const deleted = await Registration.findByIdAndDelete(req.params.id);
@@ -66,23 +84,6 @@ router.delete('/:id', async (req, res) => {
         res.json({ message: 'Deleted successfully' });
     } catch (error) {
         res.status(500).json({ message: 'Error deleting registration', error: error.message });
-    }
-});
-
-// GET stats summary
-router.get('/stats', async (req, res) => {
-    try {
-        const total = await Registration.countDocuments();
-        const verified = await Registration.countDocuments({ status: 'VERIFIED' });
-        res.json({
-            registered: total,
-            verified,
-            pending: total - verified,
-            slotsLeft: Math.max(0, 32 - total),
-            players: total
-        });
-    } catch (error) {
-        res.status(500).json({ message: 'Error fetching stats' });
     }
 });
 
