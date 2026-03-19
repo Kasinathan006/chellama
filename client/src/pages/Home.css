@@ -91,8 +91,7 @@
   flex-direction: column;
   justify-content: center;
   padding-left: 2rem;
-  animation: slideLeft 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  opacity: 0;
+  animation: slideLeft 1.2s cubic-bezier(0.16, 1, 0.3, 1) both;
   animation-delay: 0.2s;
 }
 
@@ -253,8 +252,7 @@
   width: 100%;
   max-width: 550px;
   margin-bottom: 0.5rem;
-  animation: characterSlideUp 1.5s cubic-bezier(0.075, 0.82, 0.165, 1) forwards, pulseGlow 3s infinite alternate 1.5s;
-  opacity: 0;
+  animation: characterSlideUp 1.5s cubic-bezier(0.075, 0.82, 0.165, 1) both, pulseGlow 3s infinite alternate 1.5s;
 }
 
 /* ==================== ENTER BUTTON ==================== */
@@ -265,8 +263,7 @@
   display: flex;
   justify-content: center;
   position: relative;
-  animation: slideUp 1s ease-out forwards;
-  opacity: 0;
+  animation: slideUp 1s ease-out both;
   animation-delay: 0.9s;
 }
 
@@ -303,8 +300,7 @@
   justify-content: center;
   padding-right: 2rem;
   gap: 1.8rem;
-  animation: slideRight 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  opacity: 0;
+  animation: slideRight 1.2s cubic-bezier(0.16, 1, 0.3, 1) both;
   animation-delay: 0.4s;
 }
 
