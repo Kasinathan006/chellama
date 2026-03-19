@@ -116,7 +116,7 @@
 
 .total-prize {
   font-family: 'Orbitron', sans-serif;
-  font-size: 7.5rem;
+  font-size: 3.5rem;
   font-weight: 900;
   line-height: 1;
   margin: 0;
@@ -127,7 +127,7 @@
 
 .total-prize span {
   font-family: 'Teko', sans-serif;
-  font-size: 8.5rem;
+  font-size: 4.5rem;
   margin-right: 5px;
 }
 
@@ -173,7 +173,7 @@
 
 .prize-amount {
   font-family: 'Orbitron', sans-serif;
-  font-size: 2.2rem;
+  font-size: 0.95rem;
   font-weight: 900;
   color: #fff;
   text-shadow: 0 0 15px rgba(184, 41, 255, 0.5);
@@ -183,16 +183,16 @@
 
 .prize-amount span.cyan-text {
   font-family: 'Teko', sans-serif;
-  font-size: 2.8rem;
+  font-size: 1.1rem;
   margin-right: 6px;
 }
 
 .first-prize-amount {
-  font-size: 3.5rem !important;
+  font-size: 1.3rem !important;
 }
 
 .first-prize-amount span.cyan-text {
-  font-size: 4.5rem !important;
+  font-size: 1.8rem !important;
 }
 
 /* ==================== CENTER COLUMN ==================== */
@@ -316,14 +316,14 @@
 }
 
 .entry-box {
-  padding: 15px 40px;
+  padding: 8px 18px;
   text-align: center;
-  width: 280px;
+  width: 170px;
 }
 
 .entry-price {
   font-family: 'Orbitron', sans-serif;
-  font-size: 5rem;
+  font-size: 2rem;
   font-weight: 900;
   line-height: 1;
   margin: 0;
@@ -331,23 +331,23 @@
 
 .entry-price span {
   font-family: 'Teko', sans-serif;
-  font-size: 5.5rem;
-  margin-right: 8px;
+  font-size: 2.5rem;
+  margin-right: 6px;
 }
 
 .entry-label {
   font-family: 'Orbitron', sans-serif;
   color: #7b8f9e;
-  font-size: 1.4rem;
-  letter-spacing: 8px;
-  margin-top: 5px;
+  font-size: 0.65rem;
+  letter-spacing: 5px;
+  margin-top: 4px;
   font-weight: 700;
 }
 
 .map-box {
-  padding: 12px;
-  width: 280px;
-  height: 280px;
+  padding: 8px;
+  width: 170px;
+  height: 170px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -363,24 +363,24 @@
 }
 
 .map-info {
-  width: 280px;
+  width: 170px;
   text-align: center;
 }
 
 .map-detail-text {
   font-family: 'Orbitron', sans-serif;
   color: #7b8f9e;
-  font-size: 0.9rem;
+  font-size: 0.6rem;
   font-weight: 600;
   letter-spacing: 2px;
-  margin: 8px 0;
+  margin: 5px 0;
   text-transform: uppercase;
 }
 
 .map-detail-text span.cyan-text {
-  font-size: 1.1rem;
+  font-size: 0.7rem;
   font-weight: 900;
-  margin-left: 8px;
+  margin-left: 6px;
   color: #b829ff;
   text-shadow: 0 0 12px rgba(184, 41, 255, 0.7);
 }
@@ -787,31 +787,31 @@
 }
 
 /* ==================== MOBILE RESPONSIVE ==================== */
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .home-container {
-    padding: 0.8rem;
+    padding: 1rem;
   }
 
   .home-header {
-    padding-top: 3.5rem;
-    padding-bottom: 0.3rem;
+    padding-top: 4rem;
+    padding-bottom: 0.5rem;
   }
 
   .home-header h1 {
     font-size: 1.8rem;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
   }
 
   .home-header p.subtitle {
-    font-size: 0.75rem;
-    letter-spacing: 3px;
+    font-size: 0.9rem;
+    letter-spacing: 4px;
   }
 
   /* Stack 3 columns into single column */
   .home-content {
     grid-template-columns: 1fr;
     min-height: auto;
-    gap: 1rem;
+    gap: 1.2rem;
   }
 
   .left-col {
@@ -823,8 +823,8 @@
 
   .center-col {
     order: 1;
-    height: 200px;
-    min-height: 200px;
+    height: 220px;
+    min-height: 220px;
   }
 
   .right-col {
@@ -832,26 +832,11 @@
     padding-right: 0;
     align-items: center;
     text-align: center;
-  }
-
-  /* Prize Pool — smaller */
-  .prize-title {
-    font-size: 0.7rem;
-    letter-spacing: 2px;
-  }
-
-  .total-prize {
-    font-size: 3rem;
-    text-align: center;
-  }
-
-  .total-prize span {
-    font-size: 3.2rem;
+    gap: 1rem;
   }
 
   .prize-divider {
-    margin: 6px auto 10px auto;
-    max-width: 200px;
+    margin: 8px auto 12px auto;
   }
 
   .prize-list {
@@ -860,157 +845,122 @@
   }
 
   .prize-item {
-    font-size: 0.8rem;
+    font-size: 0.85rem;
   }
 
-  .prize-rank {
-    width: 90px;
-    font-size: 0.75rem;
+  /* Prize amounts — smaller than desktop on mobile */
+  .total-prize {
+    font-size: 2.5rem;
+    text-align: center;
   }
 
-  .prize-dash {
-    margin: 0 8px;
+  .total-prize span {
+    font-size: 3rem;
   }
 
   .prize-amount {
-    font-size: 1.2rem;
+    font-size: 0.85rem;
   }
 
   .prize-amount span.cyan-text {
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
 
   .first-prize-amount {
-    font-size: 1.5rem !important;
+    font-size: 1.1rem !important;
   }
 
   .first-prize-amount span.cyan-text {
-    font-size: 1.8rem !important;
+    font-size: 1.5rem !important;
   }
 
-  /* Character image smaller */
   .character-img {
-    max-height: 170px;
-    max-width: 140px;
+    max-height: 200px;
+    max-width: 160px;
   }
 
-  /* Entry fee box — smaller */
+  /* Entry box on mobile */
   .entry-box {
-    padding: 10px 25px;
-    width: 180px;
+    width: 140px;
+    padding: 8px 14px;
   }
 
   .entry-price {
-    font-size: 2.8rem;
+    font-size: 1.6rem;
   }
 
   .entry-price span {
-    font-size: 3rem;
-    margin-right: 4px;
+    font-size: 2rem;
   }
 
   .entry-label {
-    font-size: 0.9rem;
+    font-size: 0.55rem;
     letter-spacing: 4px;
   }
 
-  /* Map box — smaller */
+  /* Map box on mobile */
   .map-box {
-    width: 200px;
-    height: 200px;
-    padding: 8px;
+    width: 140px;
+    height: 140px;
+    padding: 6px;
   }
 
   .map-info {
-    width: 200px;
+    width: 140px;
   }
 
   .map-detail-text {
-    font-size: 0.7rem;
-    letter-spacing: 1px;
-    margin: 4px 0;
+    font-size: 0.55rem;
+  }
+
+  .map-detail-text span.cyan-text {
+    font-size: 0.65rem;
   }
 
   /* Navbar mobile */
   .navbar-links {
-    gap: 0.6rem;
-  }
-
-  .navbar-link {
-    font-size: 0.65rem;
-    letter-spacing: 0.5px;
-  }
-
-  /* Enter button */
-  .enter-btn {
-    font-size: 0.85rem;
-    padding: 12px 30px;
-    letter-spacing: 2px;
-  }
-
-  /* Footer */
-  .footer-row {
     gap: 0.8rem;
   }
 
-  .social-btn {
-    font-size: 0.65rem;
-    padding: 8px 12px;
-  }
-
-  .rules-btn {
+  .navbar-link {
     font-size: 0.7rem;
-    padding: 8px 16px;
-  }
-
-  /* Center glow smaller */
-  .center-glow {
-    width: 250px;
-    height: 250px;
-  }
-
-  .free-fire-watermark {
-    font-size: 3rem;
+    letter-spacing: 1px;
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 480px) {
   .home-header h1 {
-    font-size: 1.5rem;
-  }
-
-  .home-header p.subtitle {
-    font-size: 0.65rem;
+    font-size: 1.4rem;
     letter-spacing: 2px;
   }
 
+  .home-header p.subtitle {
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+  }
+
   .total-prize {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 
   .total-prize span {
-    font-size: 2.7rem;
+    font-size: 2.5rem;
   }
 
   .entry-box {
-    width: 150px;
-    padding: 8px 20px;
+    width: 120px;
   }
 
   .entry-price {
-    font-size: 2.2rem;
-  }
-
-  .entry-price span {
-    font-size: 2.4rem;
+    font-size: 1.3rem;
   }
 
   .map-box {
-    width: 170px;
-    height: 170px;
+    width: 120px;
+    height: 120px;
   }
 
   .map-info {
-    width: 170px;
+    width: 120px;
   }
 }
